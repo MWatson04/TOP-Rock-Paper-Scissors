@@ -1,4 +1,4 @@
-/* Global Variables */
+/* Used to determine when the human choice function can break */
 let validChoice = false;
 
 /* 
@@ -54,8 +54,13 @@ function getHumanChoice() {
     }
 }
 
-while (validChoice != true) {
-    console.log("You choose: " + getHumanChoice());
+/* Gets code to run in console on web browser */
+function run() {
+    while (validChoice != true) {
+        console.log("You choose: " + getHumanChoice());
+    }
+    
+    console.log("Computer chooses: " + getComputerChoice());
 }
 
-console.log("Computer chooses: " + getComputerChoice());
+run();
