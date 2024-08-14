@@ -1,5 +1,3 @@
-console.log("Hello World")
-
 /* 
 Function that allows computer player to "choose" 
 between rock, paper, or scissors 
