@@ -7,6 +7,7 @@ let gameOver = false;
 let globalHumanChoice = "";
 let globalComputerChoice = "";
 
+console.log("This is rock, paper, scissors. First to 3 wins!");
 
 /* 
 Allow human player to make their
@@ -67,44 +68,44 @@ function getScore(humanValue, computerValue) {
 
     switch (true) {
         case humanValue === gameOptions[0] && computerValue === gameOptions[0]:
-            console.log("This round is a tie! \n");
+            console.log("This round is a tie!");
             break;
         case humanValue === gameOptions[0] && computerValue === gameOptions[1]:
-            console.log("Computer wins this round! \n");
+            console.log("Computer wins this round!");
             computerScore++;
             break;
         case humanValue === gameOptions[0] && computerValue === gameOptions[2]:
-            console.log("You win this round! \n");
+            console.log("You win this round!");
             humanScore++;
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[0]:
-            console.log("You win this round! \n");
+            console.log("You win this round!");
             humanScore++;
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[1]:
-            console.log("This round is a tie! \n");
+            console.log("This round is a tie!");
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[2]:
-            console.log("Computer wins this round! \n");
+            console.log("Computer wins this round!");
             computerScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[0]:
-            console.log("Computer wins this round! \n");
+            console.log("Computer wins this round!");
             computerScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[1]:
-            console.log("You win this round! \n");
+            console.log("You win this round!");
             humanScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[2]:
-            console.log("This round is a tie! \n");
+            console.log("This round is a tie!");
         default:
-            console.log("Error...Default Option Chosen \n")
+            console.log("Error...Default Option Chosen")
             break;
     }
 
     // Display score to player
-    console.log("Score: You:" + humanScore + " Computer:" + computerScore);
+    console.log("Score: You: " + humanScore + " Computer: " + computerScore);
 
     // Set game over here to avoid extra round being played when game ends
     if (computerScore === roundsToWin || humanScore === roundsToWin) {
@@ -115,7 +116,7 @@ function getScore(humanValue, computerValue) {
 // Gets code to run in console on web browser
 function run() {
     while (!validChoice) {
-        console.log("You choose: " + getHumanChoice());
+        console.log("\nYou choose: " + getHumanChoice());
     }
 
     console.log("Computer chooses: " + getComputerChoice());
