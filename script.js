@@ -31,7 +31,7 @@ function getHumanChoice() {
             validChoice = true;
             return globalHumanChoice;
         default:
-            console.log("Your choice was not valid. Please try again");
+            console.log("Invalid Input. Please try again");
             validChoice = false;
             break;
     }
@@ -58,6 +58,8 @@ function getComputerChoice() {
         case comChoice >= 67 && comChoice <= 100:
             globalComputerChoice = gameOptions[2];
             return globalComputerChoice;
+        default:
+            console.log("CPU has grown a mind of its own");
     }
 }
 
