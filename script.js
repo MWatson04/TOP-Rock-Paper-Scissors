@@ -9,8 +9,8 @@ let globalComputerChoice = "";
 
 
 /* 
-Function that allows human player to make
-their choice of rock, paper, or scissors
+Allow human player to make their
+choice of rock, paper, or scissors
 */
 function getHumanChoice() {
     // Prompt user to enter choice
@@ -38,7 +38,7 @@ function getHumanChoice() {
 
 
 /* 
-Function that allows computer player to "choose" 
+Allow computer player to "choose" 
 between rock, paper, or scissors 
 */
 function getComputerChoice() {
@@ -60,50 +60,53 @@ function getComputerChoice() {
     }
 }
 
+// Keep track of score to determine when game needs to end
 function getScore(humanValue, computerValue) {
     humanValue = globalHumanChoice;
     computerValue = globalComputerChoice;
 
     switch (true) {
         case humanValue === gameOptions[0] && computerValue === gameOptions[0]:
-            console.log("This round is a tie!");
+            console.log("This round is a tie! \n");
             break;
         case humanValue === gameOptions[0] && computerValue === gameOptions[1]:
-            console.log("Computer wins this round!");
+            console.log("Computer wins this round! \n");
             computerScore++;
             break;
         case humanValue === gameOptions[0] && computerValue === gameOptions[2]:
-            console.log("You win this round!");
+            console.log("You win this round! \n");
             humanScore++;
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[0]:
-            console.log("You win this round!");
+            console.log("You win this round! \n");
             humanScore++;
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[1]:
-            console.log("This round is a tie!");
+            console.log("This round is a tie! \n");
             break;
         case humanValue === gameOptions[1] && computerValue === gameOptions[2]:
-            console.log("Computer wins this round!");
+            console.log("Computer wins this round! \n");
             computerScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[0]:
-            console.log("Computer wins this round!");
+            console.log("Computer wins this round! \n");
             computerScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[1]:
-            console.log("You win this round!");
+            console.log("You win this round! \n");
             humanScore++;
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[2]:
-            console.log("This round is a tie!");
+            console.log("This round is a tie! \n");
         default:
-            console.log("Error...Default Option Chosen")
+            console.log("Error...Default Option Chosen \n")
             break;
     }
 
+    // Display score to player
     console.log("Score: You:" + humanScore + " Computer:" + computerScore);
 
+    // Set game over here to avoid extra round being played when game ends
     if (computerScore === roundsToWin || humanScore === roundsToWin) {
         gameOver = true;
     }
@@ -119,6 +122,7 @@ function run() {
     getScore(globalHumanChoice, globalComputerChoice);
 }
 
+// Upon gameOver becoming true, display either game over message
 function endGame() {
     if (humanScore === roundsToWin){
         console.log("Game Over! You win!");
@@ -128,19 +132,15 @@ function endGame() {
     }
 }
 
-/*if (humanScore != roundsToWin && computerScore != roundsToWin) {
+// Allows game to constantly run through one function
+function playGame() {
     while (!gameOver) {
         run();
-    }
-} */
-while (!gameOver) {
-    run();
-    
-    if (gameOver) {
-        endGame();
+        
+        if (gameOver) {
+            endGame();
+        }
     }
 }
 
-/*else if (gameOver) {
-    endGame();
-} */
+playGame();
