@@ -101,6 +101,10 @@ function getScore(humanValue, computerValue) {
             console.log("Error...Default Option Chosen")
             break;
     }
+
+    if (computerScore === roundsToWin || humanScore === roundsToWin) {
+        gameOver = true;
+    }
 }
 
 // Gets code to run in console on web browser
@@ -122,8 +126,6 @@ if (humanScore != roundsToWin && computerScore != roundsToWin) {
         run();
     }
 }
-else if (humanScore === roundsToWin || computerScore === roundsToWin) {
-    gameOver = true;
-
+else if (gameOver) {
     endGame();
 }
