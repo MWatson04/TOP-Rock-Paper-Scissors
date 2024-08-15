@@ -102,6 +102,8 @@ function getScore(humanValue, computerValue) {
             break;
     }
 
+    console.log("Score: You:" + humanScore + " Computer:" + computerScore);
+
     if (computerScore === roundsToWin || humanScore === roundsToWin) {
         gameOver = true;
     }
@@ -114,18 +116,31 @@ function run() {
     }
 
     console.log("Computer chooses: " + getComputerChoice());
-    console.log(getScore(globalHumanChoice, globalComputerChoice));
+    getScore(globalHumanChoice, globalComputerChoice);
 }
 
 function endGame() {
-    console.log("Game is OVER!!!");
+    if (humanScore === roundsToWin){
+        console.log("Game Over! You win!");
+    }
+    else if (computerScore === roundsToWin) {
+        console.log("Game Over! You Lose!");
+    }
 }
 
-if (humanScore != roundsToWin && computerScore != roundsToWin) {
+/*if (humanScore != roundsToWin && computerScore != roundsToWin) {
     while (!gameOver) {
         run();
     }
+} */
+while (!gameOver) {
+    run();
+    
+    if (gameOver) {
+        endGame();
+    }
 }
-else if (gameOver) {
+
+/*else if (gameOver) {
     endGame();
-}
+} */
