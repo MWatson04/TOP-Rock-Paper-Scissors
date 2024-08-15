@@ -99,6 +99,7 @@ function getScore(humanValue, computerValue) {
             break;
         case humanValue === gameOptions[2] && computerValue === gameOptions[2]:
             console.log("This round is a tie!");
+            break;
         default:
             console.log("Error...Default Option Chosen")
             break;
