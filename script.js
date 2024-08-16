@@ -110,11 +110,8 @@ function getScore(humanValue, computerValue) {
     // Display score to player
     console.log("Score: You: " + humanScore + " Computer: " + computerScore);
 
-    // Set game over here to avoid extra round being played when game ends
-    /* if (computerScore === roundsToWin || humanScore === roundsToWin) {
-        gameOver = true;
-    } */
 
+    // This conditional check is required to end the game when score limit is reached
     humanScore === roundsToWin && (gameOver = true);
     computerScore === roundsToWin && (gameOver = true);
 }
