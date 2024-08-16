@@ -111,9 +111,12 @@ function getScore(humanValue, computerValue) {
     console.log("Score: You: " + humanScore + " Computer: " + computerScore);
 
     // Set game over here to avoid extra round being played when game ends
-    if (computerScore === roundsToWin || humanScore === roundsToWin) {
+    /* if (computerScore === roundsToWin || humanScore === roundsToWin) {
         gameOver = true;
-    }
+    } */
+
+    humanScore === roundsToWin && (gameOver = true);
+    computerScore === roundsToWin && (gameOver = true);
 }
 
 // Gets code to run in console on web browser
