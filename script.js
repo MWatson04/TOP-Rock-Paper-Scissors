@@ -128,12 +128,7 @@ function run() {
 
 // Upon gameOver becoming true, display either game over message
 function endGame() {
-    if (humanScore === roundsToWin){
-        console.log("Game Over! You win!");
-    }
-    else if (computerScore === roundsToWin) {
-        console.log("Game Over! You Lose!");
-    }
+    (humanScore === roundsToWin) ? console.log("Game Over! You Win!") : console.log("Game Over! You Lose!");
 }
 
 // Allows game to constantly run through one function
